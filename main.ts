@@ -437,6 +437,15 @@ function cpuPlaceBoat1 () {
         grid.place(boatSpriteArrayP2[1][2], grid.add(grid.getLocation(cursor), 0, 2))
     }
 }
+function isAttackingTwice (boomSriteArray: any[]) {
+    for (let currentBoatSprite of boatSpriteArrayP2) {
+        let currentBoomSprite: Sprite = null
+        if (grid.spriteCol(currentBoomSprite) == grid.spriteCol(cursor) && grid.spriteRow(currentBoomSprite) == grid.spriteRow(cursor)) {
+            return 1
+        }
+    }
+    return 0
+}
 function initP2 () {
     hitOrMissP2 = [sprites.create(img`
         . . . . . . . . . . . . . . . . 
